@@ -2,6 +2,7 @@
 
 ![](https://raw.githubusercontent.com/zhaopengme/ndpediter/master/logo.png)  
 
+![](https://raw.githubusercontent.com/zhaopengme/ndpediter/master/ndpeditor.png)  
 
 ## 原因
 
@@ -11,7 +12,9 @@
 
 支持 markdown, 支持 window mac(linux 也可以支持的,我没有使用,就没做支持.), **支持图片上传到七牛**,支持 `ctrl+o` 打开文件, `ctrl+s` 保存文件, `ctrl+n` 新建文件.
 
-![打开图片](https://raw.githubusercontent.com/zhaopengme/ndpediter/master/open-file.png "打开图片")
+![打开](https://raw.githubusercontent.com/zhaopengme/ndpediter/master/open-file.png "打开")
+
+![保存](https://raw.githubusercontent.com/zhaopengme/ndpediter/master/save-file.png "保存")
 
 ## 使用
 
