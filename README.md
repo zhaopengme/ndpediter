@@ -32,4 +32,8 @@
 
 ## 其他
 
-[http://zhaopeng.me](http://zhaopeng.me "http://zhaopeng.me")
+作者博客: [http://zhaopeng.me](http://zhaopeng.me "http://zhaopeng.me")
+
+github: [https://github.com/zhaopengme/ndpediter](https://github.com/zhaopengme/ndpediter "https://github.com/zhaopengme/ndpediter")
+
+oschina: [http://git.oschina.net/imzhpe/ndpediter](http://git.oschina.net/imzhpe/ndpediter "http://git.oschina.net/imzhpe/ndpediter")
