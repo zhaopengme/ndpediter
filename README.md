@@ -28,7 +28,7 @@
 
 ##  使用技术
 
-node-webkit editor 等.
+[node-webkit](http://nwjs.io/ "node-webkit") [editor](https://pandao.github.io/editor.md/ "editor") 等.
 
 ## 其他
 
