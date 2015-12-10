@@ -6,11 +6,17 @@ var hasWriteAccess;
 
 var gui = require("nw.gui");
 var fs = require("fs");
+//  七牛 sdk
 var qiniu = require('qiniu');
 
+// 文件工具
 var fsutils = require('fs-utils');
+//配置文件，主要是存储七牛的密钥信息
+
 var config = './config.json';
 var options = null;
+
+
 if (!fs.existsSync(config)) {
     options = {
         "ACCESS_KEY": '',
@@ -33,6 +39,7 @@ function newFile() {
     hasWriteAccess = false;
 }
 
+//保存文件按钮按下
 function handleSaveButton() {
     if (fileEntry && hasWriteAccess) {
         writeEditorToFile(fileEntry);
@@ -40,16 +47,17 @@ function handleSaveButton() {
         $("#saveFile").trigger("click");
     }
 }
-
+//保存文件
 var onChosenFileToSave = function (theFileEntry) {
     setFile(theFileEntry, true);
     writeEditorToFile(theFileEntry);
 };
+//选择文件
 var onChosenFileToOpen = function (theFileEntry) {
     setFile(theFileEntry, false);
     readFileIntoEditor(theFileEntry);
 };
-
+// 选择打开文件
 function handleOpenButton() {
     $("#openFile").trigger("click");
 }
@@ -59,7 +67,7 @@ function setFile(theFileEntry, isWritable) {
     fileEntry = theFileEntry;
     hasWriteAccess = isWritable;
 }
-
+//将编辑器的内容保存到文件中
 function writeEditorToFile(theFileEntry) {
     var content = mdEditor.getMarkdown()
     fs.writeFile(theFileEntry, content, function (err) {
@@ -70,7 +78,7 @@ function writeEditorToFile(theFileEntry) {
         console.log("Write completed.");
     });
 }
-
+//读取文件内容到编辑器
 function readFileIntoEditor(theFileEntry) {
     fs.readFile(theFileEntry, function (err, data) {
         if (err) {
@@ -81,7 +89,7 @@ function readFileIntoEditor(theFileEntry) {
 }
 
 
-
+//读取图片文件名称
 function getFileName(file) {
     var fullPath = file;
     if (fullPath) {
@@ -96,7 +104,7 @@ function getFileName(file) {
 }
 
 
-
+//将图片的 url 插入到编辑器中
 function insertImageMd(url, alt, link) {
     if (url === "") {
         alert('图片地址为空');
@@ -116,7 +124,7 @@ function insertImageMd(url, alt, link) {
     }
 
 }
-
+//上传图片到七牛
 function fileToQiniu(params, callback) {
     qiniu.conf.SECRET_KEY = options.SECRET_KEY;
     var bucketname = options.BUCKET_NAME;
@@ -138,7 +146,7 @@ function fileToQiniu(params, callback) {
         }
     });
 }
-
+//七牛配置信息弹出框
 function qiniuconfig(callback) {
     var t = '<div style="padding:15px;"><form class="editormd-form"><label>ACCESS_KEY</label><input type="text" data-access_key="" value="' + options.ACCESS_KEY + '"><br><label>SECRET_KEY</label><input type="text" data-secret_key="" value="' + options.SECRET_KEY + '"><br><label>QINIU_URL</label><input type="text" data-qiniu_url="" value="' + options.QINIU_URL + '"><br><label>BUCKET_NAME</label><input type="text" data-bucket_name="" value="' + options.BUCKET_NAME + '"><br></form></div>';
     layer.open({
@@ -175,6 +183,7 @@ function qiniuconfig(callback) {
 
 onload = function () {
     gui.Window.get().show();
+    //初始化编辑器
     mdEditor = editormd("editormd", {
         width: "100%",
         height: "600",
@@ -254,7 +263,7 @@ onload = function () {
     });
 
 
-
+    //上传图片
     $('body').off('change', 'input[name="editormd-image-file"]').on('change', 'input[name="editormd-image-file"]', function () {
         console.log($(this).val());
         var filePath = $(this).val();
