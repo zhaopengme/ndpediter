@@ -30,6 +30,14 @@
 
 [node-webkit](http://nwjs.io/ "node-webkit") [editor](https://pandao.github.io/editor.md/ "editor") 等.
 
+## 相关文章
+
+[1小时编写一个支持七牛上传的 markdown 客户端1（技术实现篇）](http://zhaopeng.me/2015/12/8/1-hour-create-md-editor/ "1小时编写一个支持七牛上传的 markdown 客户端1（技术实现篇）")
+
+[1小时编写一个支持七牛上传的 markdown 客户端2（代码优化篇）](http://zhaopeng.me/2015/12/9/1-hour-create-md-editor-2/ "1小时编写一个支持七牛上传的 markdown 客户端2（代码优化篇）")
+
+[1小时编写一个支持七牛上传的 markdown 客户端3（打包发布篇）](http://zhaopeng.me/2015/12/11/1-hour-create-md-editor-3/ "1小时编写一个支持七牛上传的 markdown 客户端3（打包发布篇）")
+
 ## 其他
 
 作者博客: [http://zhaopeng.me](http://zhaopeng.me "http://zhaopeng.me")
