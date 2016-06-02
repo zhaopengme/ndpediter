@@ -177,8 +177,9 @@ module.exports = function () {
 	 * @return {Object} description
 	 */
 	this.uploadImage = function (e) {
-		var file = $(e.target).val();
-		console.log(file);
+				console.log(e);
+
+		var file = e.target.files[0].path;
 		var fileName = util.getFileName(file);
 		var fileSuffix = util.getFileSuffix(file);
 		var key = moment().format('YYYY/MM/DD/') + util.guid() + fileSuffix;
