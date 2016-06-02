@@ -14,9 +14,9 @@ module.exports = function () {
 		this._initEditor();
 	};
 	/**
-	 * 初始化编辑器 for _initEditor 
+	 * 初始化编辑器 for _initEditor
 	 * @private
-	 * @method _initEditor 
+	 * @method _initEditor
 	 * @return {Object} description
 	 */
 	this._initEditor = function () {
@@ -54,9 +54,9 @@ module.exports = function () {
 		});
 	};
 	/**
-	 * 添加自定义按钮 for _configToolbarIcons 
+	 * 添加自定义按钮 for _configToolbarIcons
 	 * @private
-	 * @method _configToolbarIcons 
+	 * @method _configToolbarIcons
 	 * @return {Object} description
 	 */
 	this._configToolbarIcons = function () {
@@ -64,9 +64,9 @@ module.exports = function () {
 		return toolbars;
 	};
 	/**
-	 * 添加自定义图标 for _configToolbarCustomIcons 
+	 * 添加自定义图标 for _configToolbarCustomIcons
 	 * @private
-	 * @method _configToolbarCustomIcons 
+	 * @method _configToolbarCustomIcons
 	 * @return {Object} description
 	 */
 	this._configToolbarCustomIcons = function () {
@@ -82,7 +82,7 @@ module.exports = function () {
 
 
 	this._configOnload = function () {
-		
+
 		this._configUploadImage();
 	}
 	this._configKeymap = function () {
@@ -101,9 +101,9 @@ module.exports = function () {
 	}
 
 	/**
-	 * 图片上传需要重写默认的上传组件 for _configUploadImage 
+	 * 图片上传需要重写默认的上传组件 for _configUploadImage
 	 * @private
-	 * @method _configUploadImage 
+	 * @method _configUploadImage
 	 * @return {Object} description
 	 */
 	this._configUploadImage = function () {
@@ -151,9 +151,9 @@ module.exports = function () {
 
 
 	/**
-	 * 事件处理 for _events 
+	 * 事件处理 for _events
 	 * @private
-	 * @method _events 
+	 * @method _events
 	 * @return {Object} description
 	 */
 	this.events = function () {
@@ -164,20 +164,21 @@ module.exports = function () {
 		$(window).on('resize',$.proxy(this.resizeEditor, this));
 	};
 
-	
+
 	this.resizeEditor = function  () {
 		mdEditor.fullscreen();
 		mdEditor.fullscreen();
 	}
-	
+
 	/**
-	 * 上传图片 for uploadImage 
+	 * 上传图片 for uploadImage
 	 * @private
-	 * @method uploadImage 
+	 * @method uploadImage
 	 * @return {Object} description
 	 */
 	this.uploadImage = function (e) {
 		var file = $(e.target).val();
+		console.log(file);
 		var fileName = util.getFileName(file);
 		var fileSuffix = util.getFileSuffix(file);
 		var key = moment().format('YYYY/MM/DD/') + util.guid() + fileSuffix;
@@ -198,9 +199,9 @@ module.exports = function () {
 
 
 	/**
-	 * 读取文件到编辑器 for readFileEditor 
+	 * 读取文件到编辑器 for readFileEditor
 	 * @private
-	 * @method readFileEditor 
+	 * @method readFileEditor
 	 * @param {Object} theFileEntry
 	 * @return {Object} description
 	 */
@@ -210,9 +211,9 @@ module.exports = function () {
 	};
 
 	/**
-	 * 保存文件 for writeEditor2File 
+	 * 保存文件 for writeEditor2File
 	 * @private
-	 * @method writeEditor2File 
+	 * @method writeEditor2File
 	 * @param {Object} theFileEntry
 	 * @return {Object} description
 	 */
@@ -223,9 +224,9 @@ module.exports = function () {
 	};
 
 	/**
-	 * 设置文件属性 for setFile 
+	 * 设置文件属性 for setFile
 	 * @private
-	 * @method setFile 
+	 * @method setFile
 	 * @param {Object} theFileEntry
 	 * @param {Object} isWritable
 	 * @return {Object} description
@@ -247,19 +248,19 @@ module.exports = function () {
 	};
 
 	/**
-	 * dom 触发一个click事件 for triggerClick 
+	 * dom 触发一个click事件 for triggerClick
 	 * @private
-	 * @method triggerClick 
-	 * @param {Object} dom 
+	 * @method triggerClick
+	 * @param {Object} dom
 	 * @return {Object} description
 	 */
 	this.triggerClick = function (dom) {
 		$(dom).trigger('click');
 	};
 	/**
-	 * 对话框确定回调 for _dialogOkCallback 
+	 * 对话框确定回调 for _dialogOkCallback
 	 * @private
-	 * @method _dialogOkCallback 
+	 * @method _dialogOkCallback
 	 * @return {Object} description
 	 */
 	this._dialogOkCallback = function () {

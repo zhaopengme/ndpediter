@@ -2,23 +2,24 @@
 <html lang="zh">
 
 <head>
-	<meta charset="utf-8" />
-	<title>hexoforeditor</title>
-	<link rel="stylesheet" href="./verdor/editor/css/editormd.min.css" />
-	<link rel="stylesheet" href="./verdor/layer/skin/layer.css">
-	<link rel="stylesheet" href="./css/style.css">
+    <meta charset="utf-8" />
+    <title>hexoforeditor</title>
+    <link rel="stylesheet" href="./verdor/editor/css/editormd.min.css" />
+    <link rel="stylesheet" href="./verdor/layer/skin/layer.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<div id="editormd"> </div>
 
-
-	<input style="display:none;" id="openFile" type="file" />
-	<input style="display:none;" id="saveFile" type="file" nwsaveas="default.md" />
-	<script src="./verdor/jquery.min.js"></script>
-	<script src="./verdor/editor/editormd.min.js"></script>
-	<script src="./verdor/layer/layer.js"></script>
-	<script src="./js/index.js"></script>
+    <div id="editormd"> </div>
+    <input style="display:none;" id="openFile" type="file" />
+    <input style="display:none;" id="saveFile" type="file" nwsaveas="default.md" />
+    <script type="text/javascript">
+    window.$ = window.jQuery = require(__dirname + '/verdor/jquery.min.js');
+    </script>
+    <script src="./verdor/editor/editormd.min.js"></script>
+    <script src="./verdor/layer/layer.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
